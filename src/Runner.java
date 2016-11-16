@@ -13,6 +13,10 @@ public class Runner {
         //Windows
         String file = "C:\\Users\\wvitz\\GIT\\Hangouts-Parser-Java\\jsonsrc\\Hangouts.json";
 
-        parser.processJSON(file);
+        Printer prnt = new Printer(parser.processJSON(file));
+
+        System.out.println(prnt.toString());
+
+
     }
 }

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Conversation implements IConversation {
     private ArrayList<Message> messages = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
-    String conversationID = "";
+    private String conversationID;
 
     public Conversation(String conversationID){
         this.conversationID = conversationID;
@@ -16,8 +16,8 @@ public class Conversation implements IConversation {
 
 
     @Override
-    public User getUser(int pos) {
-        return null;
+    public ArrayList<User> getUser(int pos) {
+        return this.users;
     }
 
     @Override
@@ -38,5 +38,15 @@ public class Conversation implements IConversation {
     @Override
     public void addMessage(Message msg){
         messages.add(msg);
+    }
+
+    @Override
+    public String getConversationID() {
+        return this.conversationID;
+    }
+
+    @Override
+    public void setConversationID(String conversationID) {
+        this.conversationID = conversationID;
     }
 }

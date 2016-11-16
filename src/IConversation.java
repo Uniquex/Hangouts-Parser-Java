@@ -5,9 +5,11 @@ import java.util.ArrayList;
  */
 public interface IConversation {
 
-    User getUser(int pos);
+    ArrayList<User> getUser(int pos);
     void addUser(User usr);
     ArrayList<User> getUsers();
     ArrayList<Message> getMessages();
     void addMessage(Message msg);
+    String getConversationID();
+    void setConversationID(String conversationID);
 }

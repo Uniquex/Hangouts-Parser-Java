@@ -38,7 +38,7 @@ public class Parser {
             }
 
             JSONObject zero = jason.getJSONArray("conversation_state").getJSONObject(0);
-            conv.conversationID = zero.getJSONObject("conversation_id").getString("id");
+            conv.setConversationID(zero.getJSONObject("conversation_id").getString("id"));
 
             JSONArray conversation = zero.getJSONObject("conversation_state").getJSONArray("event");
 
@@ -46,8 +46,10 @@ public class Parser {
                 JSONObject tmp = conversation.getJSONObject(y);
 
                 for(User usr : conv.getUsers()){
-                    if(usr.getUserID().equals(tmp.getJSONObject("sender_id").getString("gaia_id")) && conv.conversationID.equals(tmp.getJSONObject("conversation_id").getString("id"))){
-                        conv.addMessage(new Message(tmp.getJSONObject("chat_message").getJSONObject("message_content").getJSONArray("segment").getJSONObject(0).getString("text"),
+                    if(usr.getUserID().equals(tmp.getJSONObject("sender_id").getString("gaia_id")) && conv.getConversationID().equals(tmp.getJSONObject("conversation_id").getString("id"))){
+
+                        conv.addMessage(new Message(
+                                                    tmp.getJSONObject("chat_message").getJSONObject("message_content").getJSONArray("segment").getJSONObject(0).getString("text"),
                                                     tmp.getString("timestamp"),
                                                     usr,
                                                     tmp.getJSONObject("conversation_id").getString("id")));

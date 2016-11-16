@@ -22,7 +22,7 @@ public class Message implements IMessage {
 
     @Override
     public void setText(String text) {
-
+        this.text = text;
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Message implements IMessage {
 
     @Override
     public void setTimestamp(String timestamp) {
-
+        this.timestamp = timestamp;
     }
 
     @Override
