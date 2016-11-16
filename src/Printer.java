@@ -19,7 +19,7 @@ public class Printer {
     }
 
     public String printWelcome(){
-        String st ="Printing Conversation: "+ conv.getConversationID()+"\n";
+        String st ="Welcome\nPrinting Conversation: "+ conv.getConversationID()+"\n";
 
         return st;
     }
@@ -32,13 +32,29 @@ public class Printer {
             sb.append("----  " + usr.getName() + "\n");
         }
 
+        sb.append("-\n");
+
         return sb.toString();
     }
 
     public String printConversation(){
         StringBuilder sb = new StringBuilder();
+
         for(Message msg : conv.getMessages()){
-            sb.append(msg.getUser().getName()+" |  "+msg.getText()+"\n");
+            int y = 0;
+            StringBuilder sb2 = new StringBuilder();
+            for(User user : conv.getUsers()){
+                if(y < user.getName().length()){
+                    y = user.getName().length();
+                }
+            }
+
+            sb2.append(msg.getUser().getName());
+
+            while (sb2.length()<y+1){
+                sb2.append(" ");
+            }
+            sb.append(sb2.toString() +"|  "+msg.getText()+"\n");
         }
 
         return sb.toString();
