@@ -7,4 +7,8 @@ public interface IMessage {
     String getText();
     void setTimestamp(String timestamp);
     String getTimestamp();
+    void setUser(User usr);
+    User getUser();
+    void setCvID(String id);
+    String getCvID();
 }

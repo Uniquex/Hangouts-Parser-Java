@@ -8,9 +8,21 @@ public class Conversation implements IConversation {
     private ArrayList<User> users = new ArrayList<>();
     String conversationID = "";
 
+    public Conversation(String conversationID){
+        this.conversationID = conversationID;
+    }
+
+    public Conversation(){}
+
+
     @Override
     public User getUser(int pos) {
         return null;
+    }
+
+    @Override
+    public void addUser(User usr) {
+        users.add(usr);
     }
 
     @Override
@@ -23,6 +35,7 @@ public class Conversation implements IConversation {
         return this.messages;
     }
 
+    @Override
     public void addMessage(Message msg){
         messages.add(msg);
     }

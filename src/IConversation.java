@@ -6,7 +6,8 @@ import java.util.ArrayList;
 public interface IConversation {
 
     User getUser(int pos);
+    void addUser(User usr);
     ArrayList<User> getUsers();
     ArrayList<Message> getMessages();
-    Message addMessage();
+    void addMessage(Message msg);
 }

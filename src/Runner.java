@@ -8,7 +8,10 @@ public class Runner {
     public static void main(String[] args) {
         Parser parser = new Parser();
 
-        String file = "/home/vitz/GIT/Hangouts/jsonsrc/Hangouts.json";
+        //Linux
+        //String file = "/home/vitz/GIT/Hangouts/jsonsrc/Hangouts.json";
+        //Windows
+        String file = "C:\\Users\\wvitz\\GIT\\Hangouts-Parser-Java\\jsonsrc\\Hangouts.json";
 
         parser.processJSON(file);
     }
